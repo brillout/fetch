@@ -1,0 +1,9 @@
+{
+  "name": "@brillout/fetch",
+  "version": "0.0.1",
+  "repository": "github:brillout/fetch",
+  "main": "./fetch.js",
+  "dependencies": {
+    "node-fetch": "^1.7.3"
+  }
+}
