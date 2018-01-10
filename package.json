@@ -1,6 +1,6 @@
 {
   "name": "@brillout/fetch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": "github:brillout/fetch",
   "main": "./fetch.js",
   "dependencies": {
