@@ -1,4 +1,4 @@
-const fetch = require('./fetch');
+const fetch = require('.');
 
 fetch('https://brillout-misc.github.io/game-of-thrones/characters/list.json')
 .then(response => response.json())
