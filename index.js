@@ -6,7 +6,7 @@ var fetch;
 
 if( isUsingBrowserBuiltIn() ) {
   assert_usage(
-    false && envSupportsFetch(),
+    envSupportsFetch(),
     [
       "This browser doesn't seem to support `fetch` (window.fetch===undefined).",
       "Is this running in Internet Explorer?",
