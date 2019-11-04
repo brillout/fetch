@@ -3,7 +3,8 @@
 The `@brillout/fetch` package uses:
 - The browser built-in `window.fetch` if run in the browser.
 - The NPM package [`node-fetch`](https://github.com/bitinn/node-fetch) if run in Node.js.
-It works with bundlers such as Webpack and Parcel.
+
+`@brillout/fetch` is designed to work well with bundlers such as Webpack and Parcel.
 
 No polyfill is used in the browser, saving KBs and delay for your users.
 This is means that IE11 is not supported.
