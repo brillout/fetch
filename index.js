@@ -1,32 +1,27 @@
 "use strict";
 
-var assert_usage = require('reassert/usage');
+var assert = require('@brillout/assert');
 
 var fetch;
 
-if( isUsingBrowserBuiltIn() ) {
-  assert_usage(
-    envSupportsFetch(),
+if( isBrowser() ) {
+  assert.usage(
+    window.fetch!==undefined,
     [
-      "This browser doesn't seem to support `fetch` (window.fetch===undefined).",
+      "This browser doesn't support `fetch` (`window.fetch===undefined`).",
       "Is this running in Internet Explorer?",
-      "Note that this fetch library doesn't support IE and if you want to support IE then use another fetch implementation instead."
+      "Note that the `@brillout/fetch` library doesn't support IE. If you want to support IE then use another fetch library."
     ].join('\n')
   );
   fetch = window.fetch.bind(window);
 } else {
-  // we use `eval('require')` instead of `require` to
-  // make sure that webpack doesn't bundle `node-fetch`
+  // We use `eval('require')` instead of `require` to
+  // make sure that webpack doesn't bundle `node-fetch`.
   fetch = eval('require')('node-fetch');
 }
 
 module.exports = fetch;
-module.exports.isUsingBrowserBuiltIn = isUsingBrowserBuiltIn;
 
-function isUsingBrowserBuiltIn() {
+function isBrowser() {
   return typeof window !== "undefined";
-}
-
-function envSupportsFetch() {
-  return window.fetch!==undefined;
 }
