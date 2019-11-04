@@ -13,7 +13,7 @@ if( isUsingBrowserBuiltIn() ) {
       "Note that this fetch library doesn't support IE and if you want to support IE then use another fetch implementation instead."
     ].join('\n')
   );
-  fetch = window.fetch;
+  fetch = window.fetch.bind(window);
 } else {
   // we use `eval('require')` instead of `require` to
   // make sure that webpack doesn't bundle `node-fetch`
